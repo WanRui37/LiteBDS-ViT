@@ -1,0 +1,339 @@
+MLP WEIGHTS RANK ANALYSIS SUMMARY
+============================================================
+
+blocks.0.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.0.attn.proj.weight
+  Shape: 384x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.0.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.0.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.1.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.1.attn.proj.weight
+  Shape: 384x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.1.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.1.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.2.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.2.attn.proj.weight
+  Shape: 384x96
+  Rank: 383
+  Min Dimension: 96
+  Rank Ratio: 3.9896
+  Num Groups Weight: 4
+----------------------------------------
+blocks.2.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.2.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.3.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.3.attn.proj.weight
+  Shape: 384x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.3.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.3.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.4.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.4.attn.proj.weight
+  Shape: 384x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.4.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.4.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.5.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.5.attn.proj.weight
+  Shape: 384x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.5.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.5.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.6.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.6.attn.proj.weight
+  Shape: 384x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.6.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.6.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.7.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.7.attn.proj.weight
+  Shape: 384x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.7.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.7.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.8.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.8.attn.proj.weight
+  Shape: 384x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.8.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.8.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.9.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.9.attn.proj.weight
+  Shape: 384x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.9.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.9.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.10.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.10.attn.proj.weight
+  Shape: 384x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.10.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.10.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.11.attn.qkv.weight
+  Shape: 1152x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.11.attn.proj.weight
+  Shape: 384x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.11.mlp.fc1.weight
+  Shape: 1536x96
+  Rank: 384
+  Min Dimension: 96
+  Rank Ratio: 4.0000
+  Num Groups Weight: 4
+----------------------------------------
+blocks.11.mlp.fc2.weight
+  Shape: 384x384
+  Rank: 384
+  Min Dimension: 384
+  Rank Ratio: 1.0000
+  Num Groups Weight: 4
+----------------------------------------

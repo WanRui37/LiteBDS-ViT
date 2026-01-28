@@ -1,0 +1,108 @@
+/home/ubuntu/software/anaconda3/envs/torch_nas/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: '/home/ubuntu/software/anaconda3/envs/torch_nas/lib/python3.10/site-packages/torchvision/image.so: undefined symbol: _ZN3c1017RegisterOperatorsD1Ev'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+Loading checkpoint from: ./result/chaoyang_w8a8_train_v1.15/best_checkpoint.pth
+Checkpoint keys: ['model', 'optimizer', 'lr_scheduler', 'epoch', 'scaler', 'args']
+Model state dict keys (first 10): ['cls_token', 'dist_token', 'pos_embed', 'patch_embed.proj.weight', 'patch_embed.proj.bias', 'patch_embed.proj.alpha', 'patch_embed.proj.init_state', 'patch_embed.proj.act.alpha', 'patch_embed.proj.act.zero_point', 'patch_embed.proj.act.init_state']
+Found QuantizeLinear weight: patch_embed.proj.weight, shape: torch.Size([384, 3, 16, 16])
+Found QuantizeLinear weight: blocks.0.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.0.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.0.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.0.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found QuantizeLinear weight: blocks.1.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.1.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.1.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.1.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found QuantizeLinear weight: blocks.2.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.2.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.2.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.2.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found QuantizeLinear weight: blocks.3.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.3.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.3.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.3.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found QuantizeLinear weight: blocks.4.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.4.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.4.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.4.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found QuantizeLinear weight: blocks.5.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.5.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.5.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.5.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found QuantizeLinear weight: blocks.6.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.6.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.6.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.6.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found QuantizeLinear weight: blocks.7.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.7.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.7.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.7.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found QuantizeLinear weight: blocks.8.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.8.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.8.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.8.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found QuantizeLinear weight: blocks.9.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.9.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.9.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.9.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found QuantizeLinear weight: blocks.10.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.10.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.10.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.10.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found QuantizeLinear weight: blocks.11.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found QuantizeLinear weight: blocks.11.attn.proj.weight, shape: torch.Size([384, 96])
+Found QuantizeLinear weight: blocks.11.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found QuantizeLinear weight: blocks.11.mlp.fc2.weight, shape: torch.Size([384, 384])
+
+Found 49 QuantizeLinear weight tensors
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_patch_embed_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_0_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_0_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_0_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_0_mlp_fc2_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_1_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_1_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_1_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_1_mlp_fc2_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_2_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_2_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_2_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_2_mlp_fc2_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_3_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_3_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_3_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_3_mlp_fc2_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_4_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_4_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_4_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_4_mlp_fc2_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_5_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_5_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_5_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_5_mlp_fc2_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_6_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_6_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_6_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_6_mlp_fc2_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_7_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_7_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_7_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_7_mlp_fc2_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_8_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_8_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_8_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_8_mlp_fc2_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_9_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_9_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_9_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_9_mlp_fc2_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_10_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_10_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_10_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_10_mlp_fc2_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_11_attn_qkv_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_11_attn_proj_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_11_mlp_fc1_weight_distribution.png
+Saved distribution plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_blocks_11_mlp_fc2_weight_distribution.png
+Saved summary plot: utils/pic_weights/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_summary.png
+
+Visualization completed! Results saved to: utils/pic_weights/chaoyang_w8a8_v1.15

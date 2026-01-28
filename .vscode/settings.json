@@ -1,0 +1,15 @@
+{
+  // 其他已有的工作区配置...（如果有，保持不变，新增下面的节点）
+  "markdownlint.config": {
+    "MD007": { "indent": 4 }, // 列表缩进设置为 4 个空格（对应你之前的 Tab 配置）
+    "MD029": { "style": "one" },
+    "no-hard-tabs": false // 允许使用硬制表符（\t）
+  },
+  // 之前配置的 Markdown 编辑器缩进规则...（保留不变，比如 tabSize 等）
+  "[markdown]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "markdown.list.indentation": "same as tab size"
+  }
+}

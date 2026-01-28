@@ -1,0 +1,422 @@
+/home/ubuntu/software/anaconda3/envs/torch_nas/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: '/home/ubuntu/software/anaconda3/envs/torch_nas/lib/python3.10/site-packages/torchvision/image.so: undefined symbol: _ZN3c1017RegisterOperatorsD1Ev'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+Loading checkpoint from: ./result/chaoyang_w8a8_train_v1.15/best_checkpoint.pth
+Checkpoint keys: ['model', 'optimizer', 'lr_scheduler', 'epoch', 'scaler', 'args']
+Model state dict keys (first 10): ['cls_token', 'dist_token', 'pos_embed', 'patch_embed.proj.weight', 'patch_embed.proj.bias', 'patch_embed.proj.alpha', 'patch_embed.proj.init_state', 'patch_embed.proj.act.alpha', 'patch_embed.proj.act.zero_point', 'patch_embed.proj.act.init_state']
+Found MLP weight: blocks.0.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.0.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.0.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.0.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found MLP weight: blocks.1.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.1.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.1.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.1.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found MLP weight: blocks.2.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.2.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.2.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.2.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found MLP weight: blocks.3.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.3.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.3.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.3.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found MLP weight: blocks.4.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.4.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.4.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.4.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found MLP weight: blocks.5.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.5.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.5.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.5.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found MLP weight: blocks.6.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.6.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.6.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.6.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found MLP weight: blocks.7.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.7.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.7.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.7.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found MLP weight: blocks.8.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.8.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.8.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.8.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found MLP weight: blocks.9.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.9.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.9.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.9.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found MLP weight: blocks.10.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.10.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.10.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.10.mlp.fc2.weight, shape: torch.Size([384, 384])
+Found MLP weight: blocks.11.attn.qkv.weight, shape: torch.Size([1152, 96])
+Found MLP weight: blocks.11.attn.proj.weight, shape: torch.Size([384, 96])
+Found MLP weight: blocks.11.mlp.fc1.weight, shape: torch.Size([1536, 96])
+Found MLP weight: blocks.11.mlp.fc2.weight, shape: torch.Size([384, 384])
+
+Found 48 MLP weight tensors
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 96
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 96
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 95
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 383
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 96
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 96
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 96
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 96
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 96
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 96
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 96
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 96
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+  Grouping: 1152 -> 4 groups of size 288
+    Group 1: shape (288, 96), rank: 96
+    Group 2: shape (288, 96), rank: 96
+    Group 3: shape (288, 96), rank: 96
+    Group 4: shape (288, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 96), rank: 96
+    Group 2: shape (96, 96), rank: 96
+    Group 3: shape (96, 96), rank: 96
+    Group 4: shape (96, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 1536 -> 4 groups of size 384
+    Group 1: shape (384, 96), rank: 96
+    Group 2: shape (384, 96), rank: 96
+    Group 3: shape (384, 96), rank: 96
+    Group 4: shape (384, 96), rank: 96
+  Total grouped rank: 384
+  Grouping: 384 -> 4 groups of size 96
+    Group 1: shape (96, 384), rank: 96
+    Group 2: shape (96, 384), rank: 96
+    Group 3: shape (96, 384), rank: 96
+    Group 4: shape (96, 384), rank: 96
+  Total grouped rank: 384
+
+================================================================================
+MLP WEIGHTS RANK SUMMARY
+================================================================================
+Weight Name                    Shape           Rank   EffRank(S) EffRank(T) Ratio    EffRatio(S)  EffRatio(T)
+------------------------------------------------------------------------------------------------------------------------
+blocks.0.attn.qkv.weight       1152x96         384    84.70      7.43       4.0000   0.8823       0.0774
+blocks.0.attn.proj.weight      384x96          384    80.80      3.20       4.0000   0.8416       0.0333
+blocks.0.mlp.fc1.weight        1536x96         384    79.39      12.57      4.0000   0.8270       0.1310
+blocks.0.mlp.fc2.weight        384x384         384    218.48     6.75       1.0000   0.5690       0.0176
+blocks.1.attn.qkv.weight       1152x96         384    81.13      9.68       4.0000   0.8452       0.1008
+blocks.1.attn.proj.weight      384x96          384    72.48      5.32       4.0000   0.7550       0.0554
+blocks.1.mlp.fc1.weight        1536x96         384    81.44      12.26      4.0000   0.8483       0.1277
+blocks.1.mlp.fc2.weight        384x384         384    230.38     15.26      1.0000   0.5999       0.0397
+blocks.2.attn.qkv.weight       1152x96         384    80.75      12.34      4.0000   0.8411       0.1286
+blocks.2.attn.proj.weight      384x96          383    74.48      8.17       3.9896   0.7758       0.0851
+blocks.2.mlp.fc1.weight        1536x96         384    83.50      14.43      4.0000   0.8698       0.1503
+blocks.2.mlp.fc2.weight        384x384         384    235.47     15.90      1.0000   0.6132       0.0414
+blocks.3.attn.qkv.weight       1152x96         384    78.66      11.92      4.0000   0.8194       0.1242
+blocks.3.attn.proj.weight      384x96          384    72.46      10.26      4.0000   0.7547       0.1069
+blocks.3.mlp.fc1.weight        1536x96         384    83.59      15.37      4.0000   0.8707       0.1601
+blocks.3.mlp.fc2.weight        384x384         384    235.94     16.32      1.0000   0.6144       0.0425
+blocks.4.attn.qkv.weight       1152x96         384    82.24      13.00      4.0000   0.8567       0.1354
+blocks.4.attn.proj.weight      384x96          384    72.31      10.44      4.0000   0.7532       0.1087
+blocks.4.mlp.fc1.weight        1536x96         384    84.37      18.07      4.0000   0.8789       0.1882
+blocks.4.mlp.fc2.weight        384x384         384    235.29     14.84      1.0000   0.6127       0.0386
+blocks.5.attn.qkv.weight       1152x96         384    81.70      16.00      4.0000   0.8511       0.1667
+blocks.5.attn.proj.weight      384x96          384    68.01      8.44       4.0000   0.7085       0.0879
+blocks.5.mlp.fc1.weight        1536x96         384    85.11      18.72      4.0000   0.8866       0.1950
+blocks.5.mlp.fc2.weight        384x384         384    239.72     18.72      1.0000   0.6243       0.0487
+blocks.6.attn.qkv.weight       1152x96         384    81.39      15.33      4.0000   0.8478       0.1597
+blocks.6.attn.proj.weight      384x96          384    72.29      10.26      4.0000   0.7530       0.1069
+blocks.6.mlp.fc1.weight        1536x96         384    84.89      20.33      4.0000   0.8843       0.2118
+blocks.6.mlp.fc2.weight        384x384         384    237.68     21.22      1.0000   0.6190       0.0553
+blocks.7.attn.qkv.weight       1152x96         384    82.33      15.59      4.0000   0.8576       0.1624
+blocks.7.attn.proj.weight      384x96          384    70.35      8.84       4.0000   0.7328       0.0920
+blocks.7.mlp.fc1.weight        1536x96         384    85.66      20.80      4.0000   0.8922       0.2166
+blocks.7.mlp.fc2.weight        384x384         384    240.75     22.85      1.0000   0.6270       0.0595
+blocks.8.attn.qkv.weight       1152x96         384    82.87      14.10      4.0000   0.8632       0.1469
+blocks.8.attn.proj.weight      384x96          384    69.42      6.92       4.0000   0.7232       0.0721
+blocks.8.mlp.fc1.weight        1536x96         384    86.18      20.22      4.0000   0.8977       0.2106
+blocks.8.mlp.fc2.weight        384x384         384    236.34     14.57      1.0000   0.6155       0.0379
+blocks.9.attn.qkv.weight       1152x96         384    82.85      14.19      4.0000   0.8630       0.1478
+blocks.9.attn.proj.weight      384x96          384    69.71      7.87       4.0000   0.7261       0.0819
+blocks.9.mlp.fc1.weight        1536x96         384    85.91      19.28      4.0000   0.8949       0.2008
+blocks.9.mlp.fc2.weight        384x384         384    229.67     14.73      1.0000   0.5981       0.0384
+blocks.10.attn.qkv.weight      1152x96         384    83.02      14.46      4.0000   0.8648       0.1506
+blocks.10.attn.proj.weight     384x96          384    67.76      9.28       4.0000   0.7059       0.0966
+blocks.10.mlp.fc1.weight       1536x96         384    85.71      19.18      4.0000   0.8928       0.1998
+blocks.10.mlp.fc2.weight       384x384         384    216.83     10.18      1.0000   0.5647       0.0265
+blocks.11.attn.qkv.weight      1152x96         384    82.39      14.54      4.0000   0.8583       0.1515
+blocks.11.attn.proj.weight     384x96          384    63.77      7.36       4.0000   0.6643       0.0766
+blocks.11.mlp.fc1.weight       1536x96         384    84.06      14.46      4.0000   0.8756       0.1506
+blocks.11.mlp.fc2.weight       384x384         384    195.84     6.94       1.0000   0.5100       0.0181
+
+Average ratios:
+  Rank ratio: 3.2498
+  Effective ratio (Shannon): 0.7673
+  Effective ratio (Stable): 0.1096
+
+Rank statistics:
+  Min rank: 383
+  Max rank: 384
+  Avg rank: 383.98
+  Full rank layers: 0/48
+
+Effective rank statistics (Shannon):
+  Min effective rank: 63.77
+  Max effective rank: 240.75
+  Avg effective rank: 116.67
+
+Effective rank statistics (Stable):
+  Min effective rank: 3.20
+  Max effective rank: 22.85
+  Avg effective rank: 13.31
+Rank results saved to: utils/pic_weights_rank/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_rank_analysis.json
+Rank summary saved to: utils/pic_weights_rank/chaoyang_w8a8_v1.15/chaoyang_w8a8_v1.15_rank_summary.txt
+
+Rank analysis completed! Results saved to: utils/pic_weights_rank/chaoyang_w8a8_v1.15
