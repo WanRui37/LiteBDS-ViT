@@ -1,14 +1,16 @@
 # LiteBDS-ViT
 
-Official implementation of "LiteBDS-ViT: Lite low bit block diagonal shift for vision transformer with limited training samples"
+![arch](./pic/arch.png)
 
-## 🚀 Quick Start
+Official implementation of **"Structural Optimization Framework for Efficient Low-Precision Vision Transformers"**.
+
+## Quick Start
 
 ### Prerequisites
 
 - Python 3.10
 - PyTorch 2.6.0
-- environment.yml
+- `environment.yml`
 
 ### Basic Training
 
@@ -25,3 +27,9 @@ When you see the following flags in training logs, it indicates the model is sea
 --criterion_type block_diag
 --learnable_groups
 ```
+
+## Datasets
+
+- **CIFAR-100**: http://www.cs.toronto.edu/~kriz/cifar.html  
+- **Oxford Flowers-102**: https://www.robots.ox.ac.uk/~vgg/data/flowers/102/  
+- **Chaoyang**: https://bupt-ai-cz.github.io/HSA-NRL/
