@@ -5,6 +5,10 @@
 ## 快速运行
 
 ```bash
+# int1/int4/int8 dense gemm cutlass的代码
+make bench_gemm.bin
+python run-gemm.py
+
 # 大于等于256尺寸
 make int4_mma_compute_bound.bin
 ./int4_mma_compute_bound.bin
