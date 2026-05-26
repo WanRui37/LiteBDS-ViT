@@ -4,11 +4,26 @@
 #include <cstdlib>
 #include <stdint.h>
 
+#include "cutlass/cutlass.h"
+#include "cutlass/gemm/device/gemm.h"
+#include "cutlass/util/host_tensor.h"
+#include "cutlass/util/device_memory.h"
+#include "cutlass/util/reference/host/tensor_fill.h"
+
 #define CUDA_CHECK(call) do {                                      \
     cudaError_t err = call;                                        \
     if (err != cudaSuccess) {                                      \
         fprintf(stderr, "CUDA error %s:%d: %s\n",                 \
                 __FILE__, __LINE__, cudaGetErrorString(err));      \
+        exit(1);                                                   \
+    }                                                              \
+} while (0)
+
+#define CUTLASS_CHECK(call) do {                                   \
+    cutlass::Status status = call;                                 \
+    if (status != cutlass::Status::kSuccess) {                     \
+        fprintf(stderr, "CUTLASS error %s:%d: %d\n",             \
+                __FILE__, __LINE__, int(status));                  \
         exit(1);                                                   \
     }                                                              \
 } while (0)
@@ -32,6 +47,38 @@ static_assert(K % 32 == 0, "K must be multiple of 32");
 static_assert(G == 4, "This demo assumes G=4");
 static_assert(IG % 32 == 0, "IG must be multiple of 32");
 static_assert(OG % 32 == 0, "OG must be multiple of 32 for BDS_v3");
+
+using CutlassElementInputA = cutlass::int4b_t;
+using CutlassElementInputB = cutlass::int4b_t;
+using CutlassElementOutput = int32_t;
+using CutlassElementAccumulator = int32_t;
+using CutlassElementCompute = int32_t;
+
+using CutlassLayoutA = cutlass::layout::RowMajor;
+using CutlassLayoutB = cutlass::layout::ColumnMajor;
+using CutlassLayoutC = cutlass::layout::RowMajor;
+
+// 4 warps per CTA: (64x64) / (32x32) => 2x2 warps
+using CutlassGemm = cutlass::gemm::device::Gemm<
+    CutlassElementInputA,
+    CutlassLayoutA,
+    CutlassElementInputB,
+    CutlassLayoutB,
+    CutlassElementOutput,
+    CutlassLayoutC,
+    CutlassElementAccumulator,
+    cutlass::arch::OpClassTensorOp,
+    cutlass::arch::Sm80,
+    cutlass::gemm::GemmShape<64, 64, 128>,
+    cutlass::gemm::GemmShape<32, 32, 128>,
+    cutlass::gemm::GemmShape<8, 8, 32>,
+    cutlass::epilogue::thread::LinearCombinationClamp<
+        CutlassElementOutput,
+        128 / cutlass::sizeof_bits<CutlassElementOutput>::value,
+        CutlassElementAccumulator,
+        CutlassElementCompute>,
+    cutlass::gemm::threadblock::GemmIdentityThreadblockSwizzle<>,
+    2>;
 
 __host__ __device__ __forceinline__
 uint32_t pack_s4(int val) {
@@ -221,6 +268,67 @@ float benchmark_bds_v3(int *d_Y, int repeat_launch) {
     return ms / repeat_launch;
 }
 
+float benchmark_cutlass_int4(int repeat_launch) {
+    cutlass::gemm::GemmCoord problem_size(M, N, K);
+
+    cutlass::HostTensor<CutlassElementInputA, CutlassLayoutA> tensor_a(problem_size.mk());
+    cutlass::HostTensor<CutlassElementInputB, CutlassLayoutB> tensor_b(problem_size.kn());
+    cutlass::HostTensor<CutlassElementOutput, CutlassLayoutC> tensor_c(problem_size.mn());
+    cutlass::HostTensor<CutlassElementOutput, CutlassLayoutC> tensor_d(problem_size.mn());
+
+    cutlass::reference::host::TensorFill(tensor_a.host_view(), CutlassElementInputA(1));
+    cutlass::reference::host::TensorFill(tensor_b.host_view(), CutlassElementInputB(1));
+    cutlass::reference::host::TensorFill(tensor_c.host_view(), CutlassElementOutput(0));
+    cutlass::reference::host::TensorFill(tensor_d.host_view(), CutlassElementOutput(0));
+
+    tensor_a.sync_device();
+    tensor_b.sync_device();
+    tensor_c.sync_device();
+    tensor_d.sync_device();
+
+    CutlassElementCompute alpha = CutlassElementCompute(1);
+    CutlassElementCompute beta = CutlassElementCompute(0);
+
+    typename CutlassGemm::Arguments arguments(
+        problem_size,
+        tensor_a.device_ref(),
+        tensor_b.device_ref(),
+        tensor_c.device_ref(),
+        tensor_d.device_ref(),
+        {alpha, beta},
+        1);
+
+    size_t workspace_size = CutlassGemm::get_workspace_size(arguments);
+    cutlass::device_memory::allocation<uint8_t> workspace(workspace_size);
+
+    CutlassGemm gemm_op;
+    CUTLASS_CHECK(gemm_op.initialize(arguments, workspace.get()));
+
+    for (int i = 0; i < 10; ++i) {
+        CUTLASS_CHECK(gemm_op());
+    }
+    CUDA_CHECK(cudaDeviceSynchronize());
+
+    cudaEvent_t start, stop;
+    CUDA_CHECK(cudaEventCreate(&start));
+    CUDA_CHECK(cudaEventCreate(&stop));
+
+    CUDA_CHECK(cudaEventRecord(start));
+    for (int i = 0; i < repeat_launch; ++i) {
+        CUTLASS_CHECK(gemm_op());
+    }
+    CUDA_CHECK(cudaEventRecord(stop));
+    CUDA_CHECK(cudaEventSynchronize(stop));
+
+    float ms = 0.0f;
+    CUDA_CHECK(cudaEventElapsedTime(&ms, start, stop));
+
+    CUDA_CHECK(cudaEventDestroy(start));
+    CUDA_CHECK(cudaEventDestroy(stop));
+
+    return ms / repeat_launch;
+}
+
 bool check_dense(const int *h_C) {
     int expected = K * INNER_REPEAT;
 
@@ -273,6 +381,10 @@ int main() {
     printf("  grid  = (%d, %d, %d)\n", OG / 32, M / 8, G);
     printf("  total blocks = %d\n", (OG / 32) * (M / 8) * G);
 
+    printf("\nCUTLASS INT4 config:\n");
+    printf("  threadblock = 64x64x128, warp = 32x32x128\n");
+    printf("  warps/block = 4\n");
+
     size_t bytes = size_t(M) * N * sizeof(int);
 
     int *d_C = nullptr;
@@ -298,6 +410,7 @@ int main() {
 
     float dense_ms = benchmark_dense_v1(d_C, repeat_launch);
     float bds_ms = benchmark_bds_v3(d_Y, repeat_launch);
+    float cutlass_ms = benchmark_cutlass_int4(repeat_launch);
 
     CUDA_CHECK(cudaMemcpy(h_C, d_C, bytes, cudaMemcpyDeviceToHost));
     CUDA_CHECK(cudaMemcpy(h_Y, d_Y, bytes, cudaMemcpyDeviceToHost));
@@ -311,6 +424,7 @@ int main() {
     double dense_tops = dense_ops / (dense_ms / 1000.0) / 1e12;
     double bds_real_tops = bds_real_ops / (bds_ms / 1000.0) / 1e12;
     double bds_dense_equiv_tops = dense_ops / (bds_ms / 1000.0) / 1e12;
+    double cutlass_tops = dense_ops / (cutlass_ms / 1000.0) / 1e12;
 
     double speedup = dense_ms / bds_ms;
 
@@ -327,6 +441,10 @@ int main() {
     printf("BDS dense-equivalent TOPS: %.2f\n", bds_dense_equiv_tops);
     printf("Dense_v1 / BDS_v3 latency speedup: %.2fx\n", speedup);
     printf("Check: %s\n", bds_pass ? "PASSED" : "FAILED");
+
+    printf("\nCUTLASS INT4 GEMM (4-warps/CTA)\n");
+    printf("Average latency: %.6f ms\n", cutlass_ms);
+    printf("Dense-equivalent TOPS: %.2f\n", cutlass_tops);
 
     printf("\nInterpretation:\n");
     printf("  Dense_v1 computes full K=1024 per output tile.\n");
