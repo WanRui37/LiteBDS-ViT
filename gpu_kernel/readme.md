@@ -1,19 +1,19 @@
-# 运行
+# Usage
 
-本目录仅保留 BDS 相关的内核与输出，用于快速验证不同尺寸下的 INT4 BDS 计算。
+This directory contains only the BDS-related kernels and benchmark outputs for quickly validating INT4 BDS computation under different matrix sizes.
 
-## 快速运行
+## Quick Start
 
 ```bash
-# int1/int4/int8 dense gemm cutlass的代码
+# INT1/INT4/INT8 dense GEMM benchmarks implemented with CUTLASS
 make bench_gemm.bin
 python run-gemm.py
 
-# 大于等于256尺寸
+# Matrix sizes greater than or equal to 256
 make int4_mma_compute_bound.bin
 ./int4_mma_compute_bound.bin
 
-# 小于256尺寸 (128x128x128)
+# Matrix sizes smaller than 256 (e.g., 128 × 128 × 128)
 make int4_mma_compute_bound_128x128x128.bin
 ./int4_mma_compute_bound_128x128x128.bin
 ```
