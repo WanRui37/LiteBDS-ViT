@@ -19,8 +19,6 @@ Official implementation of **"Structural Optimization Framework for Efficient Lo
 
 - Stage 1: Group Search Without Shift
 
-The CIFAR launcher below is the main reference entry point for stage-1 training:
-
 ```bash
 CUDA_VISIBLE_DEVICES=<GPU_DEVICE_ID> python -m torch.distributed.launch --master_port=<FREE_PORT> --nproc_per_node=<NUM_GPU_PER_NODE> --use_env main.py --model fourbits_deit_small_patch16_224 --epochs 600 --warmup-epochs 0 --weight-decay 0.05 --batch-size 128 --data-path <DATASET_ROOT_PATH> --data-set CIFAR --lr 0.001 --output_dir <EXPERIMENT_OUTPUT_PATH> --distillation-type hard --teacher-model deit_small_patch16_224 --teacher-path <TEACHER_CHECKPOINT_PATH> --ffn_linear_method block_diag --ffn_fc1_shift_step 0 --ffn_fc2_shift_step 0 --ffn_group_num 1 --attn_linear_method block_diag --attn_qkv_shift_step 0 --attn_proj_shift_step 0 --attn_group_num 1 --head_linear_method normal --head_shift_step 0 --head_group_num 1 --distillation-type hard --learnable_groups --criterion_type block_diag --complexity-weight 1 --complexity-bias 0 --gradient-weight 100
 ```
