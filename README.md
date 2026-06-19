@@ -17,6 +17,8 @@ Official implementation of **"Structural Optimization Framework for Efficient Lo
 
 ## Two-Stage Train
 
+- For training and testing on the CIFAR dataset, please refer to the contents of 'scripts/'.
+
 - Stage 1: Group Search Without Shift
 
 ```bash
@@ -36,8 +38,6 @@ Use the following command to evaluate the fine-tuned model on CIFAR-100. The lay
 ```bash
 CUDA_VISIBLE_DEVICES=<GPU_DEVICE_ID> python -m torch.distributed.launch --master_port=<FREE_PORT> --nproc_per_node=1 --use_env main.py --model fourbits_deit_small_patch16_224 --batch-size 128 --data-path <DATASET_ROOT_PATH> --data-set CIFAR --output_dir <EVALUATION_OUTPUT_PATH> --resume <FINE_TUNED_CHECKPOINT_PATH> --eval --distillation-type none --ffn_linear_method block_diag --ffn_fc1_shift_step 1 --ffn_fc2_shift_step 1 --ffn_group_num 1 --attn_linear_method block_diag --attn_qkv_shift_step 1 --attn_proj_shift_step 1 --attn_group_num 1 --head_linear_method normal --head_shift_step 0 --head_group_num 1 --criterion_type normal --layer_groups '{"attn_qkv":[2,8,2,2,2,2,8,8,2,8,8,12],"attn_proj":[2,8,2,2,2,2,12,12,3,12,12,12],"mlp_fc1":[1,12,12,12,12,12,12,12,12,12,8,1],"mlp_fc2":[1,8,8,12,12,12,12,12,12,12,8,2]}' 2>&1 | tee <EVALUATION_OUTPUT_PATH>/test.log
 ```
-
-可以改成下面这样，结构更清楚，也说明了 CUTLASS 版本、各个程序的用途以及运行目录。
 
 ## CUDA/CUTLASS Kernel Benchmark
 
@@ -111,3 +111,7 @@ python run-gemm.py
 ## Acknowledgement
 
 Our code refers to Q-ViT(https://github.com/YanjingLi0202/Q-ViT) and GSB-ViT(https://github.com/IMRL/GSB-Vision-Transformer).
+
+## Release Plan
+
+This repository currently provides the core training and evaluation code, CUDA/CUTLASS kernel implementations, model configurations, a model checkpoint, and usage instructions. Additional model checkpoints and supplementary scripts will be organized and released upon acceptance of the paper.
