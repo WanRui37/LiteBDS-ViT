@@ -6,14 +6,14 @@ Official implementation of **"Structural Optimization Framework for Efficient Lo
 
 ## Environment Setup
 
-| 库名称           |     版本 |
-| ------------- | -----: |
-| PyTorch       |  2.6.0 |
-| TorchVision   | 0.15.0 |
-| timm          |  1.0.9 |
-| Transformers  | 4.52.3 |
+| Library      | Version |
+| ------------ | ------: |
+| PyTorch      |   2.6.0 |
+| TorchVision  |  0.15.0 |
+| timm         |   1.0.9 |
+| Transformers |  4.52.3 |
 
-- 其余看`environment.yml`
+* See `environment.yml` for the remaining dependencies.
 
 ## Two-Stage Train
 
@@ -33,7 +33,11 @@ CUDA_VISIBLE_DEVICES=<GPU_DEVICE_ID> python -m torch.distributed.launch --master
 
 ## Evaluation
 
+Use the following command to evaluate the fine-tuned model on CIFAR-100. The layer-wise group configuration and shift settings must be consistent with those used in stage 2.
 
+```bash
+CUDA_VISIBLE_DEVICES=<GPU_DEVICE_ID> python -m torch.distributed.launch --master_port=<FREE_PORT> --nproc_per_node=1 --use_env main.py --model fourbits_deit_small_patch16_224 --batch-size 128 --data-path <DATASET_ROOT_PATH> --data-set CIFAR --output_dir <EVALUATION_OUTPUT_PATH> --resume <FINE_TUNED_CHECKPOINT_PATH> --eval --distillation-type none --ffn_linear_method block_diag --ffn_fc1_shift_step 1 --ffn_fc2_shift_step 1 --ffn_group_num 1 --attn_linear_method block_diag --attn_qkv_shift_step 1 --attn_proj_shift_step 1 --attn_group_num 1 --head_linear_method normal --head_shift_step 0 --head_group_num 1 --criterion_type normal --layer_groups '{"attn_qkv":[2,8,2,2,2,2,8,8,2,8,8,12],"attn_proj":[2,8,2,2,2,2,12,12,3,12,12,12],"mlp_fc1":[1,12,12,12,12,12,12,12,12,12,8,1],"mlp_fc2":[1,8,8,12,12,12,12,12,12,12,8,2]}' 2>&1 | tee <EVALUATION_OUTPUT_PATH>/test.log
+```
 
 ## CUDA/CUTLASS Kernel Benchmark
 
